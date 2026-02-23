@@ -1,0 +1,43 @@
+{
+  "name": "ru-bsl-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "studio": "sanity dev --config ./studio/sanity.config.ts",
+    "studio:build": "sanity build --config ./studio/sanity.config.ts"
+  },
+  "dependencies": {
+    "@portabletext/react": "^3.2.1",
+    "@radix-ui/react-separator": "^1.1.1",
+    "@radix-ui/react-sheet": "^1.0.0",
+    "@sanity/client": "^6.28.4",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.45.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.460.0",
+    "next": "14.2.33",
+    "next-sanity": "^9.8.48",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "sanity": "^3.45.0",
+    "tailwind-merge": "^2.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint-config-next": "14.2.33",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2"
+  }
+}
