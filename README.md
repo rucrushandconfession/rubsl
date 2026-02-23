@@ -46,15 +46,22 @@
 3. `Committee Member`, `Post`, `Event`, `Gallery Album` কনটেন্ট যোগ করুন
 4. হোমপেজে স্বয়ংক্রিয়ভাবে আপডেট দেখাবে (ISR revalidate)
 
-## Vercel Deploy
+## Vercel Deploy (Production Settings)
+এই প্রজেক্টে Next.js app `src/app` এর ভেতরে আছে, তবে build root **repo root** (যেখানে `package.json` আছে) থেকেই চালাতে হবে।
+
 1. GitHub repo Vercel-এ import করুন
-2. Environment Variables সেট করুন:
+2. Project Settings → Build and Development Settings এ নিচের কনফিগ দিন:
+   - **Framework Preset:** `Next.js`
+   - **Root Directory:** `.` (repo root / empty default)
+   - **Build Command:** `npm run build`
+   - **Output Directory:** খালি রাখুন (Next.js default)
+3. Environment Variables সেট করুন:
    - `NEXT_PUBLIC_SANITY_PROJECT_ID`
    - `NEXT_PUBLIC_SANITY_DATASET`
    - `SANITY_API_READ_TOKEN` (optional)
-3. Build Command: `npm run build`
-4. Output: Next.js default
-5. Deploy
+4. Redeploy করুন
+
+> Note: `src` এখানে Next.js source directory, Vercel project root নয়। Root `src` করলে build dependency/config detect করতে ব্যর্থ হতে পারে।
 
 ## দরকারী কমান্ড
 ```bash
