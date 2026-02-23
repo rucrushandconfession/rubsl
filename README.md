@@ -46,13 +46,13 @@
 3. `Committee Member`, `Post`, `Event`, `Gallery Album` কনটেন্ট যোগ করুন
 4. হোমপেজে স্বয়ংক্রিয়ভাবে আপডেট দেখাবে (ISR revalidate)
 
-## Vercel Deploy (404 Fix)
-`404 NOT_FOUND` এড়াতে এই প্রজেক্টে **Vercel Root Directory অবশ্যই `src`** সেট করতে হবে।
+## Vercel Deploy (Production Settings)
+এই প্রজেক্টে Next.js app `src/app` এর ভেতরে আছে, তবে build root **repo root** (যেখানে `package.json` আছে) থেকেই চালাতে হবে।
 
 1. GitHub repo Vercel-এ import করুন
 2. Project Settings → Build and Development Settings এ নিচের কনফিগ দিন:
    - **Framework Preset:** `Next.js`
-   - **Root Directory:** `src`
+   - **Root Directory:** `.` (repo root / empty default)
    - **Build Command:** `npm run build`
    - **Output Directory:** খালি রাখুন (Next.js default)
 3. Environment Variables সেট করুন:
@@ -61,7 +61,7 @@
    - `SANITY_API_READ_TOKEN` (optional)
 4. Redeploy করুন
 
-> Repo root-এ `vercel.json` যোগ করা হয়েছে যাতে একই build intent (`framework`, `rootDirectory`, `buildCommand`) version-controlled থাকে।
+> Note: `src` এখানে Next.js source directory, Vercel project root নয়। Root `src` করলে build dependency/config detect করতে ব্যর্থ হতে পারে।
 
 ## দরকারী কমান্ড
 ```bash
